@@ -48,7 +48,7 @@ An end-to-end analytics pipeline built for a growing manufacturing business mana
 
 ## 📁 Project Structure
 
-```
+
 
 Dashboard/
 images/
