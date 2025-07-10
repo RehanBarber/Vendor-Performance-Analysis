@@ -1,150 +1,142 @@
-# 📦 Inventory & Vendor Performance Analysis 
+```markdown
+# 📦 Inventory & Vendor Performance Analysis
 
-An end-to-end analytics pipeline built on a realistic manufacturing case study to optimize inventory management and vendor performance. This project demonstrates industry-standard best practices for data ingestion, transformation, statistical analysis, and business intelligence using anonymized transactional data.
+An end-to-end analytics pipeline built for a growing manufacturing business managing diverse product lines. This personal portfolio project demonstrates industry‑standard best practices in data ingestion, transformation, statistical analysis, and interactive dashboarding using anonymized transactional data.
+
+> 📌 This is a personal portfolio project intended for demonstration purposes only.
 
 ---
 
 ## 📖 Overview
 
-* **Domain:** Medium-sized manufacturing company producing electronic components
-* **Data Scale:** Multi-million-row CSV files for purchases, sales, inventory, and vendor invoices
-* **Objective:** Identify inefficiencies in stock levels, reduce carrying costs, and enhance vendor management
-* **Confidentiality:** Actual product and brand names replaced with generic placeholders (e.g., “Product A”, “Product B”)
+- **Domain:** Manufacturing company handling general products  
+- **Data Scope:** Multi‑million‑row CSV files for inventory, purchases, sales, and vendor invoices  
+- **Objective:**  
+  - Identify stock inefficiencies  
+  - Reduce carrying costs  
+  - Enhance vendor management  
 
 ---
 
 ## 🚀 Key Features
 
-1. **Data Ingestion & Audit Logging**
-   Python scripts ingest raw CSV data into a SQL database with detailed log capture (`logs/ingestion_db.log`).
+1. **📥 Data Ingestion & Audit Logging**  
+   - `Ingestion/ingestion_db.py` loads raw CSV files into a SQL database  
+   - Detailed logs captured in `Logs/ingestion_db.log` for full traceability  
 
-2. **Data Transformation & Modeling**
-   SQL and Python collaboratively generate a clean, vendor-level summary table from transactional records.
+2. **🔄 Data Transformation & Modeling**  
+   - Combined SQL and Python workflows generate a clean, vendor‑level summary table  
 
-3. **Advanced Analytics & Hypothesis Testing**
-   Jupyter Notebooks perform feature engineering, exploratory data analysis (EDA), and rigorous statistical tests to uncover insights on profit margin, stock turnover, and unsold inventory.
+3. **📊 Advanced Analytics & Statistical Testing**  
+   - Jupyter notebooks perform EDA, feature engineering, and hypothesis testing on profit margins, stock turnover, and unsold inventory  
 
-4. **Interactive Business Intelligence**
-   A Power BI dashboard visualizes key performance indicators (KPIs) such as profit margins, stock-to-sales ratios, and reorder recommendations.
+4. **📈 Interactive Dashboarding**  
+   - Power BI report visualizes KPIs such as profit margins, stock‑to‑sales ratios, and reorder recommendations  
+   - Includes dynamic charts, tables, and KPI cards  
 
-5. **Modular & Reproducible Workflow**
-   Clear folder structure and configuration enable seamless onboarding for new analysts and easy pipeline maintenance.
+5. **🗂️ Modular, Scalable Structure**  
+   - Clear separation of images, ingestion scripts, logs, and analysis notebooks  
+   - Easy onboarding for new collaborators or future extensions  
 
 ---
 
-## 📂 Project Structure
+## 📁 Project Structure
 
 ```
-inventory-vendor-analysis/
+
+Dashboard/
 │
-├── data/                       # (Optional) Sample or small CSV files
+├── images/
+│   ├── Dashboard\_preview\.png        # Power BI dashboard snapshot
+│   └── Vendor PerformanceDashboard.pbix  # Interactive Power BI file
 │
-├── ingestion/                  # Data loading scripts and configuration
-│   └── ingest_to_db.py         # CSV → SQL ingestion logic with logging
+├── Ingestion/
+│   └── ingestion\_db.py              # Script for loading raw data into DB
 │
-├── notebooks/                  # Jupyter notebooks for analysis and modeling
-│   ├── 01_create_summary_table.ipynb  # Summary table generation (SQL + Python)
-│   └── 02_analysis_eda.ipynb         # EDA, feature engineering, hypothesis testing
+├── Logs/
+│   └── ingestion\_db.log             # ETL process logs
 │
-├── dashboard/                  # Business intelligence and reporting
-│   └── InventoryDashboard.pbix # Power BI dashboard
+├── Notebooks/
+│   ├── Vendor Performance Analysis.ipynb        # Main EDA & insights
+│   └── Vendor Performance Analysis (Transformed).ipynb  # Data Transormation & Summary table
 │
-├── logs/                       # Log files for auditing and debugging
-│   └── ingestion_db.log        # Timestamps and process logs for ingestion
-│
-├── docs/                       # Supporting documentation
-│   └── data_dictionary.md      # Detailed schema and column definitions
-│
-├── .gitignore                  # Specifies files and folders to ignore in Git
-├── LICENSE                     # Project license (MIT)
-├── README.md                   # Project overview and instructions
-└── requirements.txt            # Python dependencies
-```
+├── .gitignore                       # Files/folders ignored by Git
+├── README.md                        # Project documentation (this file)
+└── requirements.txt                 # Python dependencies
+
+````
 
 ---
 
-## 🛠️ Technologies & Dependencies
+## 🛠️ Tech Stack & Dependencies
 
-* **Python 3.x**: `pandas`, `SQLAlchemy`, `matplotlib`, `seaborn`, `scipy`, `statsmodels`
-* **SQL**: PostgreSQL (or SQLite) for data storage and aggregation
-* **Jupyter Notebook**: Interactive data exploration and analysis
-* **Power BI**: Interactive dashboard and reporting
-* **Logging**: Python `logging` module for ETL audit trails
+- **Python 3.x**: `pandas`, `numpy`, `SQLAlchemy`, `matplotlib`, `seaborn`, `scipy`, `statsmodels`  
+- **SQL**: PostgreSQL or SQLite  
+- **Jupyter Notebook**: Interactive data exploration  
+- **Power BI**: Dashboard creation & reporting  
+- **Logging**: Built‑in Python `logging` module  
 
-See `requirements.txt` for exact package versions.
+Refer to `requirements.txt` for exact package versions.
 
 ---
 
-## 🔧 Setup & Installation
+## ⚙️ Setup & Installation
 
-1. **Clone the repository**
-
+1. **Clone the repository**  
    ```bash
-   git clone https://github.com/yourusername/inventory-vendor-analysis.git
-   cd inventory-vendor-analysis
-   ```
+   git clone https://github.com/Saif907/vendor-performance-dashboard.git
+   cd vendor-performance-dashboard
+````
 
-2. **Create a virtual environment & install dependencies**
+2. **Create & activate a virtual environment**
 
    ```bash
    python -m venv venv
    source venv/bin/activate      # macOS/Linux
-   venv\Scripts\activate       # Windows
+   venv\Scripts\activate         # Windows
+   ```
+
+3. **Install dependencies**
+
+   ```bash
    pip install -r requirements.txt
    ```
 
-3. **Configure database connection**
-   Edit the database credentials in `ingestion/ingest_to_db.py` or set environment variables (`DB_HOST`, `DB_NAME`, `DB_USER`, `DB_PASS`).
-
-4. **Ingest raw data**
+4. **Load raw data into the database**
 
    ```bash
-   python ingestion/ingest_to_db.py
+   python Ingestion/ingestion_db.py
    ```
 
-5. **Run Jupyter Notebooks**
+5. **Explore analysis notebooks**
 
    ```bash
    jupyter lab
    ```
 
-   * Open `01_create_summary_table.ipynb` to build the summary table
-   * Open `02_analysis_eda.ipynb` for analysis and hypothesis testing
+   * `Vendor Performance Analysis.ipynb` → EDA & insights
+   * `Vendor Performance Analysis (Transformed).ipynb` → Data Transformation & summary table
 
-6. **Open Power BI Dashboard**
-   Launch Power BI Desktop and open `dashboard/InventoryDashboard.pbix`.
+6. **View the Power BI dashboard**
 
----
-
-## 📚 Data Documentation
-
-For a detailed schema and column definitions of all source and summary tables, see:
-
-* `docs/data_dictionary.md`
+   * Open Power BI Desktop and load
+     `Dashboard/Vendor PerformanceDashboard.pbix`
 
 ---
 
 ## 📊 Dashboard Preview
 
-*(Include a screenshot or GIF of your Power BI dashboard here. Save it under `dashboard/images/` and reference with Markdown.)*
+![Dashboard Preview](images/Dashboard_preview.png)
 
-```markdown
-![Dashboard Preview](dashboard/images/dashboard_preview.png)
+---
+
+## 🙋 Contact
+
+**Saif Shaikh**
+📧 saif81868@gmail.com
+🔗 www.linkedin.com/in/saif-shaikh-527346251
+
+Feel free to explore the code and reach out with any questions or feedback!
+
 ```
-
----
-
-## 📄 License
-
-This project is licensed under the [MIT License](LICENSE).
-
----
-
-## 🙋‍♂️ Contact & Contribution
-
-**Saif Shaikh**
-
-> Email: [youremail@example.com](mailto:youremail@example.com)
-> LinkedIn: [linkedin.com/in/yourprofile](https://www.linkedin.com/in/yourprofile)
-
-Contributions, issues, and feature requests are welcome! Feel free to open a pull request or issue on GitHub.
+```
