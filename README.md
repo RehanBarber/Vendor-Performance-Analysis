@@ -110,7 +110,7 @@ Refer to requirements.txt for exact package versions.
 
 ## 📊 Dashboard Preview
 
-![Dashboard Preview](images/Dashboard_preview.png)
+![Dashboard Preview](Dashboard/images/Dashboard_preview.png)
 
 ---
 
