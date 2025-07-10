@@ -1,4 +1,4 @@
-# 📦 Inventory & Vendor Performance Analysis – Manufacturing Case Study
+# 📦 Inventory & Vendor Performance Analysis 
 
 An end-to-end analytics pipeline built on a realistic manufacturing case study to optimize inventory management and vendor performance. This project demonstrates industry-standard best practices for data ingestion, transformation, statistical analysis, and business intelligence using anonymized transactional data.
 
