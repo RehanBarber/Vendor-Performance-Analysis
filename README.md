@@ -45,28 +45,28 @@ An end-to-end analytics pipeline built for a growing manufacturing business mana
 
 ---
 
+
 ## 📁 Project Structure
 
+```
+
 Dashboard/
-├── images/
-│   ├── Dashboard\_preview\.png        # Power BI dashboard snapshot
-│   └── Vendor PerformanceDashboard.pbix  # Interactive Power BI file
+images/
+Dashboard\_preview\.png            # Power BI dashboard snapshot
+Vendor PerformanceDashboard.pbix  # Interactive Power BI file
+Ingestion/
+ingestion\_db.py                  # Script for loading raw data into DB
+Logs/
+ingestion\_db.log                 # ETL process logs
+Notebooks/
+Vendor Performance Analysis.ipynb             # Main EDA & insights
+Vendor Performance Analysis (Transformed).ipynb  # Data transformation & summary table
+.gitignore                         # Files/folders ignored by Git
+README.md                          # Project documentation (this file)
+requirements.txt                   # Python dependencies
 
-├── Ingestion/
-│   └── ingestion\_db.py              # Script for loading raw data into DB
-
-├── Logs/
-│   └── ingestion\_db.log             # ETL process logs
-
-├── Notebooks/
-│   ├── Vendor Performance Analysis.ipynb        # Main EDA & insights
-│   └── Vendor Performance Analysis (Transformed).ipynb  # Data Transformation & summary table
-
-├── .gitignore                       # Files/folders ignored by Git
-├── README.md                        # Project documentation (this file)
-└── requirements.txt                 # Python dependencies
-
----
+```
+```
 
 ## 🛠️ Tech Stack & Dependencies
 
